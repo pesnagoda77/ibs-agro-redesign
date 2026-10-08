@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПТК «АйБиЭс» — Здоровье стада, основа вашей прибыли</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --earth-dark: #1a2e1a;
+    --earth: #2d4a2d;
+    --moss: #4a6b4a;
+    --sage: #8fa88f;
+    --cream: #faf8f3;
+    --warm: #f5f0e8;
+    --clay: #c4a77d;
+    --sun: #e8c547;
+    --milk: #fffef9;
+    --text: #2c3a2c;
+    --text-light: #5a6b5a;
+    --shadow: 0 4px 20px rgba(26,46,26,.08);
+    --shadow-lg: 0 8px 40px rgba(26,46,26,.12);
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3 { font-weight: 700; line-height: 1.2; }
+  
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(250,248,243,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(26,46,26,.06);
+    transition: all .3s;
+  }
+  
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--earth-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--earth) 0%, var(--moss) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sun);
+    font-size: 18px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 14px;
+    transition: color .2s;
+    position: relative;
+  }
+  
+  .nav-links a:hover { color: var(--earth); }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--sun);
+    transition: width .3s;
+  }
+  
+  .nav-links a:hover::after { width: 100%; }
+  
+  .nav-cta {
+    background: var(--earth);
+    color: var(--milk) !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .2s;
+  }
+  
+  .nav-cta:hover { background: var(--earth-dark); transform: translateY(-1px); }
+  
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--earth-dark) 0%, var(--earth) 50%, var(--moss) 100%);
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><path d="M0,200 Q100,150 200,200 T400,200 V400 H0 Z" fill="%23a8e063" opacity="0.03"/><circle cx="300" cy="100" r="150" fill="%23e8c547" opacity="0.05"/></svg>');
+    background-size: cover;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+    width: 100%;
+  }
+  
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(232,197,71,.15);
+    color: var(--sun);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    border: 1px solid rgba(232,197,71,.3);
+  }
+  
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    color: var(--milk);
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    max-width: 700px;
+  }
+  
+  .hero h1 em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--sun);
+    font-weight: 400;
+  }
+  
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(255,254,249,.85);
+    max-width: 560px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .btn-primary {
+    background: var(--sun);
+    color: var(--earth-dark);
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all .3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(232,197,71,.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(232,197,71,.4);
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: var(--milk);
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid rgba(255,254,249,.3);
+    transition: all .3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(255,254,249,.1);
+    border-color: rgba(255,254,249,.5);
+  }
+  
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 32px;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,254,249,.1);
+  }
+  
+  .stat-item {
+    text-align: left;
+  }
+  
+  .stat-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--sun);
+    display: block;
+    line-height: 1;
+  }
+  
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,254,249,.7);
+    margin-top: 8px;
+    display: block;
+  }
+  
+  /* ===== DIRECTIONS ===== */
+  .directions {
+    padding: 100px 0;
+    background: var(--cream);
+  }
+  
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+  
+  .section-tag {
+    display: inline-block;
+    background: rgba(45,74,45,.1);
+    color: var(--earth);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  
+  .section-title {
+    font-size: clamp(28px, 4vw, 42px);
+    color: var(--earth-dark);
+    margin-bottom: 16px;
+  }
+  
+  .section-sub {
+    color: var(--text-light);
+    font-size: 16px;
+  }
+  
+  .directions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  
+  .direction-card {
+    background: var(--milk);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all .4s;
+    border: 1px solid rgba(26,46,26,.06);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .direction-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--earth) 0%, var(--sun) 100%);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  
+  .direction-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .direction-card:hover::before { opacity: 1; }
+  
+  .direction-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--warm) 0%, var(--cream) 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .direction-card h3 {
+    font-size: 20px;
+    color: var(--earth-dark);
+    margin-bottom: 12px;
+  }
+  
+  .direction-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .direction-link {
+    color: var(--earth);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap .2s;
+  }
+  
+  .direction-link:hover { gap: 10px; }
+  
+  /* ===== PRODUCTS ===== */
+  .products {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--warm) 0%, var(--cream) 100%);
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+  }
+  
+  .product-card {
+    background: var(--milk);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all .4s;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .product-visual {
+    height: 200px;
+    background: linear-gradient(135deg, var(--earth) 0%, var(--moss) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-visual::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, var(--milk), transparent);
+  }
+  
+  .product-emoji {
+    font-size: 64px;
+    opacity: 0.9;
+  }
+  
+  .product-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--sun);
+    color: var(--earth-dark);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 2;
+  }
+  
+  .product-body {
+    padding: 28px;
+  }
+  
+  .product-body h3 {
+    font-size: 22px;
+    color: var(--earth-dark);
+    margin-bottom: 8px;
+  }
+  
+  .product-tagline {
+    color: var(--earth);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  .product-body p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .product-metric {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--warm);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .metric-value {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--earth);
+  }
+  
+  .metric-label {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.4;
+  }
+  
+  .product-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--earth);
+    color: var(--milk);
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  
+  .product-btn:hover { background: var(--earth-dark); }
+  
+  /* ===== EXPERTISE ===== */
+  .expertise {
+    padding: 100px 0;
+    background: var(--earth-dark);
+    color: var(--milk);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .expertise::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(232,197,71,.1) 0%, transparent 70%);
+  }
+  
+  .expertise .section-title { color: var(--milk); }
+  .expertise .section-sub { color: rgba(255,254,249,.7); }
+  .expertise .section-tag {
+    background: rgba(232,197,71,.2);
+    color: var(--sun);
+  }
+  
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .expertise-card {
+    background: rgba(255,254,249,.05);
+    border: 1px solid rgba(255,254,249,.1);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all .3s;
+  }
+  
+  .expertise-card:hover {
+    background: rgba(255,254,249,.08);
+    border-color: rgba(232,197,71,.3);
+  }
+  
+  .expertise-date {
+    display: inline-block;
+    background: rgba(232,197,71,.2);
+    color: var(--sun);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .expertise-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  
+  .expertise-card p {
+    color: rgba(255,254,249,.7);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .expertise-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,254,249,.1);
+  }
+  
+  .expertise-speaker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .speaker-avatar {
+    width: 36px;
+    height: 36px;
+    background: var(--moss);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  
+  .speaker-name {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .speaker-role {
+    font-size: 11px;
+    color: rgba(255,254,249,.5);
+  }
+  
+  /* ===== CTA / CONTACT ===== */
+  .contact {
+    padding: 100px 0;
+    background: var(--cream);
+  }
+  
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  
+  .contact-info h2 {
+    font-size: 36px;
+    color: var(--earth-dark);
+    margin-bottom: 20px;
+  }
+  
+  .contact-info > p {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .method-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--warm);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  
+  .method-text strong {
+    display: block;
+    font-size: 15px;
+    color: var(--earth-dark);
+  }
+  
+  .method-text span {
+    font-size: 13px;
+    color: var(--text-light);
+  }
+  
+  .contact-form {
+    background: var(--milk);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--earth-dark);
+    margin-bottom: 8px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--warm);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color .2s;
+    background: var(--cream);
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--earth);
+  }
+  
+  .form-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--earth);
+    color: var(--milk);
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  
+  .form-submit:hover {
+    background: var(--earth-dark);
+    transform: translateY(-1px);
+  }
+  
+  .form-privacy {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+  
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--earth-dark);
+    color: var(--milk);
+    padding: 60px 0 30px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-brand {
+    grid-column: span 2;
+  }
+  
+  .footer-brand .logo {
+    color: var(--milk);
+    margin-bottom: 16px;
+  }
+  
+  .footer-brand p {
+    color: rgba(255,254,249,.7);
+    font-size: 14px;
+    max-width: 300px;
+    line-height: 1.6;
+  }
+  
+  .footer-col h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--sun);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-col a {
+    color: rgba(255,254,249,.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color .2s;
+  }
+  
+  .footer-col a:hover { color: var(--sun); }
+  
+  .footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,254,249,.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .footer-bottom p {
+    font-size: 13px;
+    color: rgba(255,254,249,.5);
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(255,254,249,.5);
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover { color: var(--sun); }
+  
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .contact-wrapper { grid-template-columns: 1fr; }
+    .footer-brand { grid-column: span 1; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🌿</div>
+      ПТК «АйБиЭс»
+    </a>
+    <ul class="nav-links">
+      <li><a href="#directions">Направления</a></li>
+      <li><a href="#products">Продукты</a></li>
+      <li><a href="#expertise">Экспертиза</a></li>
+      <li><a href="#contact">Контакты</a></li>
+      <li><a href="#contact" class="nav-cta">Оставить заявку</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">
+      🐄 20+ лет с фермерами России
+    </div>
+    <h1>
+      Здоровье стада —<br>
+      <em>основа вашей прибыли</em>
+    </h1>
+    <p class="hero-sub">
+      Научно обоснованные решения для молочного скотоводства, птицеводства и свиноводства. 
+      Работаем с фермами от 50 до 5000 голов.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">
+        Каталог решений →
+      </a>
+      <a href="#contact" class="btn-secondary">
+        Бесплатная консультация
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">ферм-партнёров</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">препаратов и решений</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">12</span>
+        <span class="stat-label">ежегодных конференций</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15%</span>
+        <span class="stat-label">средний рост продуктивности</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="directions" id="directions">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Направления</span>
+      <h2 class="section-title">Комплексный подход к животноводству</h2>
+      <p class="section-sub">Не просто препараты — системы решений под вашу задачу</p>
+    </div>
+    <div class="directions-grid">
+      <div class="direction-card">
+        <div class="direction-icon">🐄</div>
+        <h3>Скотоводство</h3>
+        <p>Молочная продуктивность, воспроизводство, здоровье вымени, метаболические заболевания</p>
+        <a href="#" class="direction-link">Решения для КРС →</a>
+      </div>
+      <div class="direction-card">
+        <div class="direction-icon">🐔</div>
+        <h3>Птицеводство</h3>
+        <p>Антикокцидийная защита, безопасность корма, санитария, продуктивность стада</p>
+        <a href="#" class="direction-link">Решения для птицы →</a>
+      </div>
+      <div class="direction-card">
+        <div class="direction-icon">🐷</div>
+        <h3>Свиноводство</h3>
+        <p>Здоровье ЖКТ, сохранность поросят, гепатопротекция, комплексные программы</p>
+        <a href="#" class="direction-link">Решения для свиней →</a>
+      </div>
+      <div class="direction-card">
+        <div class="direction-icon">🏭</div>
+        <h3>Оборудование</h3>
+        <p>Вентиляция, микроклимат, системы содержания, хранение кормов</p>
+        <a href="#" class="direction-link">Каталог оборудования →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Флагманы</span>
+      <h2 class="section-title">Препараты с доказанной эффективностью</h2>
+      <p class="section-sub">Каждое решение — результат научных исследований и полевых испытаний</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-visual">
+          <span class="product-badge">Хит продаж</span>
+          <div class="product-emoji">🌾</div>
+        </div>
+        <div class="product-body">
+          <h3>Фибраза Фарм</h3>
+          <div class="product-tagline">Золотой стандарт ферментов для жвачных</div>
+          <p>Синергизм четырёх компонентов для максимальной переваримости кормов и устранения ацидоза</p>
+          <div class="product-metric">
+            <div class="metric-value">+2,5л</div>
+            <div class="metric-label">молока в сутки на голову</div>
+          </div>
+          <button class="product-btn">Рассчитать экономику</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-visual">
+          <span class="product-badge">Эксклюзив</span>
+          <div class="product-emoji">🛡️</div>
+        </div>
+        <div class="product-body">
+          <h3>Фарматан</h3>
+          <div class="product-tagline">Контроль клостридиоза и соматики</div>
+          <p>Комплекс эллаготанинов для повышения транзитного белка и снижения соматики</p>
+          <div class="product-metric">
+            <div class="metric-value">-30%</div>
+            <div class="metric-label">соматики за 3 недели</div>
+          </div>
+          <button class="product-btn">Рассчитать экономику</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-visual">
+          <div class="product-emoji">💊</div>
+        </div>
+        <div class="product-body">
+          <h3>Ста-Хол 50%</h3>
+          <div class="product-tagline">Защищённый холин от Balchem</div>
+          <p>Революционная технология защиты холина для здоровья печени и воспроизводства</p>
+          <div class="product-metric">
+            <div class="metric-value">85%</div>
+            <div class="metric-label">защита активного вещества</div>
+          </div>
+          <button class="product-btn">Рассчитать экономику</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Экспертиза</span>
+      <h2 class="section-title">Знания, которые работают на вашу ферму</h2>
+      <p class="section-sub">Вебинары, конференции, исследования — бесплатно для партнёров</p>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <span class="expertise-date">14 октября</span>
+        <h3>Профилактика маститов в переходный период</h3>
+        <p>Разбор программ сухостоя и оценка рисков. Практические рекомендации по гигиене доения.</p>
+        <div class="expertise-meta">
+          <div class="expertise-speaker">
+            <div class="speaker-avatar">👨‍⚕️</div>
+            <div>
+              <div class="speaker-name">Игорь Барингольц</div>
+              <div class="speaker-role">Главный зоотехник</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-date">21 октября</span>
+        <h3>Экономика метионина в рационах высокопродуктивных коров</h3>
+        <p>Снижение себестоимости молока за счёт оптимизации белкового питания.</p>
+        <div class="expertise-meta">
+          <div class="expertise-speaker">
+            <div class="speaker-avatar">👩‍🔬</div>
+            <div>
+              <div class="speaker-name">Александр Радионов</div>
+              <div class="speaker-role">Нутрициолог</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-date">28 октября</span>
+        <h3>Тепловой стресс: подготовка к летнему сезону</h3>
+        <p>Климатическое оборудование, рационные решения, мониторинг микроклимата.</p>
+        <div class="expertise-meta">
+          <div class="expertise-speaker">
+            <div class="speaker-avatar">👨‍🌾</div>
+            <div>
+              <div class="speaker-name">Тино Хохмут</div>
+              <div class="speaker-role">Международный эксперт</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <span class="section-tag">Контакты</span>
+        <h2>Нужна консультация специалиста?</h2>
+        <p>Позвоните или оставьте заявку — мы свяжемся в течение рабочего дня и подберём решение под вашу задачу.</p>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="method-icon">📞</div>
+            <div class="method-text">
+              <strong>+7 (495) 565-41-94</strong>
+              <span>Пн-пт: с 09:00 до 18:00</span>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="method-icon">✉️</div>
+            <div class="method-text">
+              <strong>info@ibsagro.ru</strong>
+              <span>Ответим в течение 2 часов</span>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="method-icon">📍</div>
+            <div class="method-text">
+              <strong>г. Люберцы, ул. Комсомольская, 15а</strong>
+              <span>Московская область, 140005</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form">
+        <div class="form-group">
+          <label>Ваше имя</label>
+          <input type="text" placeholder="Иван Петров">
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="tel" placeholder="+7 (___) ___-__-__">
+        </div>
+        <div class="form-group">
+          <label>Направление</label>
+          <select>
+            <option>Скотоводство</option>
+            <option>Птицеводство</option>
+            <option>Свиноводство</option>
+            <option>Оборудование</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Сообщение (необязательно)</label>
+          <textarea rows="3" placeholder="Опишите вашу задачу..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Отправить заявку</button>
+        <p class="form-privacy">
+          Отправляя заявку, вы соглашаетесь с политикой обработки персональных данных
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon">🌿</div>
+          ПТК «АйБиЭс»
+        </a>
+        <p>Внедрение новейших препаратов и экологически чистых технологий для устойчивого животноводства.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Каталог</h4>
+        <ul>
+          <li><a href="#">Скотоводство</a></li>
+          <li><a href="#">Птицеводство</a></li>
+          <li><a href="#">Свиноводство</a></li>
+          <li><a href="#">Оборудование</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <ul>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Вебинары</a></li>
+          <li><a href="#">Новости</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Информация</h4>
+        <ul>
+          <li><a href="#">Статьи</a></li>
+          <li><a href="#">Конференции</a></li>
+          <li><a href="#">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ПТК «АйБиЭс». Все права защищены.</p>
+      <div class="footer-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Обработка персональных данных</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
